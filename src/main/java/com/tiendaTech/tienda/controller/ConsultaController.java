@@ -56,5 +56,11 @@ public class ConsultaController {
         model.addAttribute("precioSup", precioSup);
         return "/consultas/listado";
     }
+    @PostMapping("/consultaExistencias")
+        public String consultaExistencias(@RequestParam("existenciasMax") int existenciasMax,Model model) {
+            var productos = productoService.consultaExistencias(existenciasMax);
+            model.addAttribute("productos", productos);
+              return "/consultas/listado";
+    }
 
 }

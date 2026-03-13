@@ -47,7 +47,7 @@ public class ProductoController {
         model.addAttribute("totalProductos", productos.size());
         return "/producto/listado";
     }
-
+// Prueba
     @PostMapping("/guardar")
     public String guardar(@Valid Producto producto, @RequestParam MultipartFile imagenFile, RedirectAttributes redirectAttributes) {
 

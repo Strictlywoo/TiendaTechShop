@@ -81,4 +81,8 @@ public class ProductoService {
         return productoRepository.consultaJPQL(precioInf, precioSup);
     }
 
+    @Transactional(readOnly = true)
+    public List<Producto> consultaExistencias(int existenciasMax) {
+        return productoRepository.findByExistenciasLessThan(existenciasMax);
+    }
 }
